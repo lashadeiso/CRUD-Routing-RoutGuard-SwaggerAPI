@@ -1,0 +1,31 @@
+<form
+  #authFrom="ngForm"
+  (ngSubmit)="onAuthFromSubmit(authFrom)"
+  class="col-md-4 m-auto mt-5"
+>
+  <div class="from-group">
+    <label for="">User</label>
+    <input
+      name="user"
+      ngModel
+      type="text"
+      placeholder="Enter here"
+      class="form-control"
+    />
+  </div>
+  <div class="from-group">
+    <label for="">Password</label>
+    <input
+      name="password"
+      ngModel
+      type="password"
+      placeholder="Enter here"
+      class="form-control"
+    />
+  </div>
+  <div class="from-group">
+    <button type="submit" class="btn btn-success col-md-12 d-block m-auto">
+      Submit
+    </button>
+  </div>
+</form>

@@ -1,0 +1,39 @@
+<div>
+  <div class="head">
+    <h3>All Cars Data / Count {{ carsList.length }}</h3>
+    <a routerLink="/cars/create" class="btn btn-success">Create Car</a>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Model</th>
+        <th scope="col">Mark</th>
+        <th scope="col">Year</th>
+        <th scope="col">Price</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carItem of carsList; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td scope="col">{{ carItem.modelName }}</td>
+        <td scope="col">{{ carItem.markName }}</td>
+        <td scope="col">{{ carItem.year | date }}</td>
+        <td scope="col">{{ carItem.price }}</td>
+        <td scope="col">
+          <a routerLink="/cars/update/{{ carItem.id }}" class="btn btn-warning"
+            >Update</a
+          >
+        </td>
+        <td scope="col">
+          <button class="btn btn-danger" (click)="deletaCar(carItem.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
